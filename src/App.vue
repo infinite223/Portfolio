@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import TopNavigation from './components/TopNavigation.vue'
-
+import { useTheme } from './store/index'
+const { theme } = useTheme()
+console.log(theme.value)
 </script>
 
 <template>
@@ -16,6 +18,14 @@ import TopNavigation from './components/TopNavigation.vue'
 <style lang="scss">
 :root {
   --baseColor_1: rgb(74, 207, 72);
+  --baseColor_2: rgb(10, 208, 226);
+  --baseColor_3: rgb(171, 5, 154);
+  --baseColor_4: rgb(192, 176, 11);
+
+  --baseColor_1_secend: rgb(11, 114, 9);
+  --baseColor_2_secend: rgb(3, 111, 120);
+  --baseColor_3_secend: rgb(98, 1, 88);
+  --baseColor_4_secend: rgb(72, 67, 2);
 }
 
 .app {

@@ -1,10 +1,18 @@
 <script setup lang="ts">
-    import { ref, watchEffect } from 'vue'
+    import { computed, ref, watchEffect } from 'vue'
     import { Icon } from '@iconify/vue'
     import { RouterView } from 'vue-router'
     import {useRoute} from 'vue-router'
+    import { useTheme } from '@/store';
+    const { theme } = useTheme()
 
     const route = useRoute()
+
+    const colorTheme_first = (path:string) => {
+      if(route.path===path){
+        return `color: ${theme.value.first}`
+      }
+    }
 
     // watchEffect(() => {
     //     console.log(route.path)
@@ -16,9 +24,27 @@
   <div class="topNavigation">
     <nav>
         <!-- <router-link to="/" :class="(route.path==='/')?'class_if_is_true':'else_class'">Skills</router-link> -->
-        <router-link class="link page-link" to="/" :class="{'active':route.path==='/'}">About</router-link>
-        <router-link class="link page-link" to="/skills" :class="{'active':route.path==='/skills'}">Skills</router-link>
-        <router-link class="link page-link" to="/projects" :class="{'active':route.path==='/projects'}">Projects</router-link>
+        <router-link 
+          :style="colorTheme_first('/')" 
+          class="link page-link" 
+          to="/" 
+        >
+          About
+        </router-link>
+        <router-link 
+          :style="colorTheme_first('/skills')" 
+          class="link page-link" 
+          to="/skills" 
+        >
+          Skills
+        </router-link>
+        <router-link 
+          :style="colorTheme_first('/projects')" 
+          class="link page-link" 
+          to="/projects" 
+        >
+          Projects
+        </router-link>
     </nav>
 
   </div>
