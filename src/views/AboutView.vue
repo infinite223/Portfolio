@@ -36,7 +36,7 @@ import CIrcleGradient from '@/components/CIrcleGradient.vue';
       </p>
 
       <div class="about__location">
-        <Icon :color="theme.secend" icon="material-symbols:location-on" class="icon" width="16px"/>
+        <Icon :color="theme.first" icon="material-symbols:location-on" class="icon" width="18px"/>
         <div class="about__location-place">Polska, Opole</div>
       </div>
     </div>
@@ -65,16 +65,16 @@ import CIrcleGradient from '@/components/CIrcleGradient.vue';
 
     h2 {
       color: var(--baseColor_1);
-      font-size: 20px;
+      font-size: 19px;
       text-transform: uppercase;
-      font-weight: 700;
+      font-weight: 900;
       letter-spacing: 1px;
     }
 
     p {
       color: rgb(212, 212, 212);
       font-size: 16px;
-      margin-top: 20px;
+      margin-top: 21px;
     }
 
     h1, h2, p, .about__location {
@@ -87,8 +87,9 @@ import CIrcleGradient from '@/components/CIrcleGradient.vue';
       margin-top: 10px;
       .about__location-place {
         font-weight: 600;
-        font-size: 13px;
+        font-size: 15px;
         color: rgb(203, 203, 203);
+        margin-top: 5px;
       }
     }
   }

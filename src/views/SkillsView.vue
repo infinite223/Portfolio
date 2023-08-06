@@ -6,12 +6,15 @@
 </script>
 
 <template>
-  <div class="skillsList">
-    <div v-for="skill in mySkills" class="skillItem">
-      {{skill}}
-    </div>
+    <transition name="slide-right" mode="out-in">
+    <div class="skillsList">
+      <div v-for="skill in mySkills" class="skillItem">
+        {{skill}}
+      </div>
 
-  </div>
+    </div>
+  
+  </transition> 
 </template>
 
 <style scoped lang="scss">

@@ -2,6 +2,9 @@
 </script>
 
 <template>
-  <main>
-  </main>
+  <transition name="slide">
+    <div>
+      dsadsa
+    </div>
+  </transition> 
 </template>

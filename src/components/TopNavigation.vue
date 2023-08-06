@@ -75,6 +75,7 @@
         font-size: 18px;
         color: rgb(180, 180, 180);
         text-decoration: none;
+        font-weight: 600;
         border: none;
 
         &:hover {

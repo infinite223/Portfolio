@@ -9,17 +9,17 @@ const router = createRouter({
     {
       path: '/',
       name: 'about',
-      component: AboutView
+      component: AboutView,
     },
     {
       path: '/skills',
       name: 'skills',
-      component: SkillsView
+      component: SkillsView,
     },
     {
       path: '/projects',
       name: 'projects',
-      component: ProjectsView
+      component: ProjectsView,
     }
   ]
 })

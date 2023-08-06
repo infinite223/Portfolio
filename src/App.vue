@@ -29,7 +29,7 @@ console.log(theme.value)
 }
 
 .app {
-  background-color: rgb(21, 21, 21);
+  background-color: rgb(17, 17, 17);
   width: 100%;
   height: 100vh;
   margin:0px;

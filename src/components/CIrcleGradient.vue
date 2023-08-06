@@ -3,6 +3,7 @@
   import { Icon } from '@iconify/vue'
   import { useTheme } from '../store/index';
   import gsap from 'gsap'
+import { Draggable } from 'gsap/all';
 
   function getRandomInt(max:number) {
     return Math.floor(Math.random() * max);
@@ -21,50 +22,78 @@
   })
 
   const { theme, changeTheme } = useTheme()
-  
-  const number = ref(0)
-    const tweened = reactive({
-    number: 0
-    })
+  const number = ref(1)
 
-    watch(number, (n) => {
-        gsap.to(tweened, { duration: 0.5, number: Number(n) || 0 })
-    })
-  
+  const tweened = reactive({
+    number: 0
+  })
+
+  watch(number, (n) => {
+    gsap.to(tweened, { duration: 0.5, number: Number(n) || 0 })
+  })
+    
   const tryChangeTheme = (color:IColorType) => {
-    console.log('dsad')
+    number.value = 40
+    setTimeout(() => {
+      number.value = 1
+
+    }, 500)
     changeTheme(color)
   }
-  console.log(color)
+
   const randomPosAndSize = computed(() => {
-    const size = getRandomInt(250)+50
-    const posX = getRandomInt(innerWidth)
-    const posY = getRandomInt(innerHeight)
+    const size = getRandomInt(80)+50
+    const posX = getRandomInt(innerWidth-200)+100
+    const posY = getRandomInt(innerHeight-200)+100
     
     return `
         width: ${size+'px'}; height: ${size+'px'}; left: ${posX+ 'px'}; top: ${posY+ 'px'};
-        background: radial-gradient(circle, ${color.first} 0%, ${color.secend} 5%,  rgb(31, 31, 31) 80%,  rgb(21, 21, 21) 100%);
-        animation-delay:${getRandomInt(4)+'s'}
+        background: radial-gradient(circle, ${color.first} 0%, ${color.secend} 1%, rgba(15, 15, 15, 1) 85%,  rgba(21, 21, 21, .1) 100%);
+        animation-delay:${getRandomInt(4)+'s'}:
+        box-shadow: 0px 0px 68px 10px ${color.secend};
+        -webkit-box-shadow: 0px 0px 68px 10px ${color.secend};
+        -moz-box-shadow: 0px 0px 68px 10px${color.secend};
         `
   })
+
+
+  const enter = (el:any) => {
+    gsap.from(el, {
+        duration: 1,
+        scale:.5,
+        opacity: 0,
+    })
+    gsap.to(el, {
+        duration: 1,
+        scale:1,
+        y: 0,
+        opacity: 1,
+    })
+    
+  }
+  
 </script>
 
 <template>
+  <transition 
+    appear 
+    @enter="enter"
+  >
     <div 
         @click="tryChangeTheme(color)" 
         class="circleGradient"
-        :style="randomPosAndSize"
+        :style="[`transform: scale(${number}); z-index: ${number}`, randomPosAndSize]"
     >
-
     </div>
+  </transition>
 </template>
 
 <style scoped lang="scss">
     .circleGradient {
         position: fixed;
-
+        
         border-radius: 50%;
-        animation: pulse 5s infinite;
+        // animation: pulse 5s infinite;
         z-index: 1;
         &:hover {
             transform: scale(1.1);
@@ -78,4 +107,21 @@
         50%{  transform: scale(.9);}
         0% {  transform: scale(1.1);}
     }
+    .rotate-enter-active {
+      animation: rotate 0.2s;
+    }
+
+    .rotate-leave-active {
+      animation: rotate 0.2s reverse;
+    }
+
+    @keyframes scale {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(3);
+      }
+    }
+
 </style>
