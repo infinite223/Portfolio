@@ -8,7 +8,7 @@ console.log(theme.value)
 
 <template>
   <div class="app">
-    <TopNavigation/>
+    <!-- <TopNavigation/> -->
 
     <RouterView/>
   </div>
@@ -29,13 +29,13 @@ console.log(theme.value)
 }
 
 .app {
-  background-color: rgb(17, 17, 17);
+  background-color: black;
   width: 100%;
   height: 100vh;
-  margin:0px;
+  padding: 0 20px;
   display: flex;
   align-items: center;
-  padding: 0 80px;
+
   overflow-y: auto;
 }
 
