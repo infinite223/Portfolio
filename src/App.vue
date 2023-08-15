@@ -31,7 +31,6 @@ console.log(theme.value)
 .app {
   background-color: black;
   width: 100%;
-  height: 100vh;
   padding: 0 20px;
   display: flex;
   align-items: center;
@@ -40,7 +39,24 @@ console.log(theme.value)
 }
 
 
+::-webkit-scrollbar {
+  width: 10px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #575757;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
 
 
 /*reset.css*/

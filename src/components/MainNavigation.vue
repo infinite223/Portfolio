@@ -20,7 +20,7 @@ import { Icon } from '@iconify/vue'
 <template>
     <nav>
         <div class="themeSelect" :style="{backgroundColor:'lightgray'}">
-            <Icon :color="theme.first" icon="ic:outline-palette" class="icon" width="28px"/>
+            <Icon :color="theme.first" icon="mdi:palette" class="icon" width="28px"/>
 
         </div>
 
@@ -88,7 +88,7 @@ import { Icon } from '@iconify/vue'
         .button {
             padding: 10px 20px;
             border: 1px solid white;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-size: 17px;
             font-weight: 200;
             color: rgb(242, 242, 242);

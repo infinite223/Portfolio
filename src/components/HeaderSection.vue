@@ -58,8 +58,8 @@
 
         @keyframes pulse {
         100% {  height: 50px; opacity: 1;}
-        50%{   height: 20px; opacity: .1;}
-        0% {   height: 50px; opacity: 1;}
+        0%{   height: 0px; opacity: 1;}
+        // 0% {   height: 50px; opacity: 1;}
     }
     }
 </style>
