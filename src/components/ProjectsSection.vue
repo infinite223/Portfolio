@@ -34,7 +34,7 @@
 
 <style lang="scss">
     .projectsSection {
-        height: 100vh;
+        height: auto;
         width: 100%;
         // background-color: rgb(10, 10, 10);
 
@@ -87,9 +87,16 @@
         
         .projectsList {
             display: flex;
-            align-items: center;
             gap: 10px;
             margin: 20px -20px;
+            width: 100vw;
+            max-height: 640px;
+
+            overflow-x: scroll;
+
+            &::-webkit-scrollbar{
+                width: 0px;
+            }
         }
     }
 </style>

@@ -3,7 +3,7 @@ import { RouterLink, RouterView } from 'vue-router'
 import TopNavigation from './components/TopNavigation.vue'
 import { useTheme } from './store/index'
 const { theme } = useTheme()
-console.log(theme.value)
+
 </script>
 
 <template>

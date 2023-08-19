@@ -1,12 +1,14 @@
 <script setup lang="ts">
+   import { useTheme } from '@/store';
 
+    const { theme } = useTheme()
 </script>
 
 <template>
     <div class="hobbySection">
-        <h2>
+        <h3>
             My hobby
-        </h2>
+        </h3>
     </div>
 </template>
 
@@ -15,8 +17,10 @@
         height: 100vh;
         width: 100%;
         
-        h2 {
-
+        h3 {
+            font-size:14px;
+            color: v-bind('theme.first');
+            font-weight: 300;
         }
     }
 </style>
