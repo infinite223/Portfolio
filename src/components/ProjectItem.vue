@@ -9,6 +9,7 @@
     import monkey from '../assets/monkey.png';
     import workSchedule from '../assets/workSchedule.png';
     import downloadSongs from '../assets/downloadSongs.png';
+    import shoppingNotes from '../assets/shoppingNotes.png';
 
     const { theme } = useTheme()
     const showOptions = ref(false)
@@ -40,6 +41,8 @@
                 return `background-image: url( ${workSchedule})`;
             case 'downloadSongs': 
                 return `background-image: url( ${downloadSongs})`;
+            case 'shoppingNotes': 
+                return `background-image: url( ${shoppingNotes})`;
             default:
                 break;
         }
@@ -50,6 +53,7 @@
 <template>
     <div 
         class="projectItem" 
+        :id="projectData?.name"
         :style="backgroundProjectImage"
         :onmouseenter="() => handleMouse(true)"
         :onmouseleave="() => handleMouse(false)"

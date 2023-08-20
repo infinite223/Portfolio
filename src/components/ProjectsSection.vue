@@ -2,10 +2,43 @@
     import { myProjects } from '../utils/projectsData'
     import ProjectItem from './ProjectItem.vue'
     import { useTheme } from '@/store';
-    import { computed } from 'vue';
+    import { computed, ref } from 'vue';
     import { Icon } from '@iconify/vue'
-
+    const selectedProject = ref(3)
+    const lastUsed = ref(true)
     const { theme } = useTheme()
+
+    const scrollByValue = (type: boolean) => {
+      const container:any = document.getElementById('projectsList'); // Zmień na właściwe id kontenera
+
+    if(type && selectedProject.value !== myProjects.length){
+        if(lastUsed.value){
+            selectedProject.value = selectedProject.value+1
+            const element:any = document.getElementById(myProjects[selectedProject.value-1].name,);
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+        else {
+            selectedProject.value = selectedProject.value+3
+            const element:any = document.getElementById(myProjects[selectedProject.value-1].name,);
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        lastUsed.value = true
+      }
+      else if(!type && selectedProject.value !== 1 ) {
+        if(lastUsed.value){
+            selectedProject.value = selectedProject.value-3
+            const element:any = document.getElementById(myProjects[selectedProject.value-1].name,);
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+        else {
+            selectedProject.value = selectedProject.value-1
+            const element:any = document.getElementById(myProjects[selectedProject.value-1].name,);
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+        lastUsed.value = false
+      }
+    }
 </script>
 
 <template>
@@ -21,13 +54,14 @@
             </div>
             <div class="right">
                 <div>See my projects on github</div>
-                <div class="button">View code</div>
+                <a class="button" href="https://github.com/infinite223?tab=repositories">View code</a>
             </div>
         </nav>
 
-
-        <div class="projectsList">
+        <div class="projectsList" id="projectsList">
+            <button class="arrowIcon left" @click="() => scrollByValue(false)">{{"<"}}</button>
             <ProjectItem v-for="project in myProjects" :project-data="project"/>
+            <button class="arrowIcon right" @click="() => scrollByValue( true)">{{">"}}</button>
         </div>
     </div>
 </template>
@@ -36,7 +70,7 @@
     .projectsSection {
         height: auto;
         width: 100%;
-        // background-color: rgb(10, 10, 10);
+        position: relative;
 
         nav {
             display: flex;
@@ -75,6 +109,7 @@
                     font-size: 17px;
                     font-weight: 200;
                     color: rgb(242, 242, 242);
+                    text-decoration: none;
                     cursor: pointer;
 
                     &:hover {
@@ -96,6 +131,35 @@
 
             &::-webkit-scrollbar{
                 width: 0px;
+                height: 10px;
+            }
+            &::-webkit-scrollbar-track{
+                background-color: black;
+            }
+            &::-webkit-scrollbar-thumb{
+                background-color: rgb(56, 56, 56);
+                background: linear-gradient(90deg, rgb(81, 81, 81) 0%, rgba(0,0,0,1) 50%);
+            }
+
+            .arrowIcon {
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: rgb(12, 12, 12);
+                color: white;
+                bottom: 300px;
+                border: 1px solid white;
+                z-index: 1;
+                
+            }
+
+            .left {
+                left: 0px;
+            }
+
+            .right {
+                right: 0px;
             }
         }
     }

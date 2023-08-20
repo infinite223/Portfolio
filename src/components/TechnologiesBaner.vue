@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-
+    import { myTechnologies } from './../utils/projectsData'
 </script>
 
 <template>
@@ -7,12 +7,9 @@
         <h3>Technologies I use</h3>
         <p>Technologies that I use most often to create my projects</p>
         <div class="content">
-            <div class="item">React</div>
-            <div class="item">React Native</div>
-            <div class="item">Vue</div>
-            <div class="item">Redux</div>
-            <div class="item">Scss</div>
-            <div class="item">firebase</div>
+            <div class="item" v-for="technology in myTechnologies">
+                {{technology.name}}
+            </div>
         </div>
     </div>
 </template>
@@ -42,6 +39,9 @@
         .content{
             display: flex;
             align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 80vw;
 
             .item {
                 border: 1px solid rgb(193, 193, 193);

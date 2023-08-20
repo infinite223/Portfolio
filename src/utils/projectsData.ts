@@ -3,7 +3,7 @@ export type Project = {
     description: string,
     technologies: {id: number, name: string, icon:string}[],
     createdAt: Date,
-    image: 'carsdesignStart' | 'kaban' | 'monkey' | 'workSchedule' | 'downloadSongs',
+    image: 'carsdesignStart' | 'kaban' | 'monkey' | 'workSchedule' | 'downloadSongs' | 'shoppingNotes',
     type: 'Mobile app' | 'Web app',
     links: {
         linkToGithub: string,
@@ -11,7 +11,7 @@ export type Project = {
     }
 }
 
-const myTechnologies = [
+export const myTechnologies = [
     {id:0, name:'React', icon: ""},
     {id:1,name:'React Native', icon: ""},
     {id:2,name:'Expo', icon: ''},
@@ -25,6 +25,7 @@ const myTechnologies = [
     {id:10, name:'Type script', icon: ""},
     {id:11, name:'Css', icon: ""},
     {id:12, name:'Java Script', icon: ""},
+    {id:13, name:'Tailwind', icon: ""},
 ]
 
 export const myProjects:Project[] = [
@@ -74,10 +75,10 @@ export const myProjects:Project[] = [
         type: 'Mobile app',
         technologies: [
             myTechnologies[0], 
-            myTechnologies[3], 
-            myTechnologies[4], 
+            myTechnologies[1], 
+            myTechnologies[2], 
             myTechnologies[5], 
-            myTechnologies[7],
+            myTechnologies[9],
             myTechnologies[12]
         ],
         image:'monkey',
@@ -120,6 +121,25 @@ export const myProjects:Project[] = [
         links: {
             linkToGithub: 'https://github.com/infinite223/download-songs',
             linkToLiveapp: 'https://download-songs.netlify.app/'
+        }
+    },
+    {
+        name: 'Shopping notes',
+        description: "Shopping-notes is a simple mobile application that allows users to create their shopping lists. Products in them will be automatically grouped by shops and product category, which will make shopping easier for the user.",
+        createdAt: new Date(),
+        type: 'Mobile app',
+        technologies: [
+            myTechnologies[0], 
+            myTechnologies[1], 
+            myTechnologies[2], 
+            myTechnologies[10], 
+            myTechnologies[12],
+            myTechnologies[13]
+        ],
+        image:'shoppingNotes',
+        links: {
+            linkToGithub: 'https://github.com/infinite223/Shopping-notes',
+            linkToLiveapp: 'https://play.google.com/store/apps/details?id=com.shopping.notes'
         }
     }
 ]

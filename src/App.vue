@@ -38,6 +38,11 @@ const { theme } = useTheme()
   overflow-y: auto;
 }
 
+html {
+  scroll-behavior: smooth;
+
+}
+
 
 ::-webkit-scrollbar {
   width: 10px;
