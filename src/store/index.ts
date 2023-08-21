@@ -10,3 +10,12 @@ export function useTheme() {
 
   return { theme, changeTheme };
 }
+const hoverTechProjects = ref<string[]>([])
+
+export function useHoverTechProjects() {
+  const setHoverTechProjects = (projects: string[]) => {
+    hoverTechProjects.value = projects
+  };
+
+  return { hoverTechProjects, setHoverTechProjects };
+}

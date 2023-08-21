@@ -15,6 +15,12 @@ import { Icon } from '@iconify/vue'
     const hoverColor = computed(() => {
         return `&hover`
     })
+
+    const scrollToSection = (sectionName: string)  => {
+        const element: any = document.getElementById(sectionName);
+        
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
 </script>
 
 <template>
@@ -25,7 +31,7 @@ import { Icon } from '@iconify/vue'
         </div>
 
         <div class="links__container">
-            <div class="link" v-for="link in links">
+            <div class="link" v-for="link in links" @click="() => scrollToSection(link.value)">
                 {{link.name}}
             </div>
         </div>

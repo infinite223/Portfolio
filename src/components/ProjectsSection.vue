@@ -9,40 +9,30 @@
     const { theme } = useTheme()
 
     const scrollByValue = (type: boolean) => {
-      const container:any = document.getElementById('projectsList'); // Zmień na właściwe id kontenera
+        if (type && selectedProject.value !== myProjects.length) {
+            if (lastUsed.value) {
+                selectedProject.value = selectedProject.value + 1;
+            } else {
+                selectedProject.value = selectedProject.value + 3;
+            }
+            lastUsed.value = true;
+        } else if (!type && selectedProject.value !== 1) {
+            if (lastUsed.value) {
+                selectedProject.value = selectedProject.value - 3;
+            } else {
+                selectedProject.value = selectedProject.value - 1;
+            }
+            lastUsed.value = false;
+        }
 
-    if(type && selectedProject.value !== myProjects.length){
-        if(lastUsed.value){
-            selectedProject.value = selectedProject.value+1
-            const element:any = document.getElementById(myProjects[selectedProject.value-1].name,);
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-        else {
-            selectedProject.value = selectedProject.value+3
-            const element:any = document.getElementById(myProjects[selectedProject.value-1].name,);
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        lastUsed.value = true
-      }
-      else if(!type && selectedProject.value !== 1 ) {
-        if(lastUsed.value){
-            selectedProject.value = selectedProject.value-3
-            const element:any = document.getElementById(myProjects[selectedProject.value-1].name,);
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-        else {
-            selectedProject.value = selectedProject.value-1
-            const element:any = document.getElementById(myProjects[selectedProject.value-1].name,);
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-        lastUsed.value = false
-      }
-    }
+        const element: any = document.getElementById(myProjects[selectedProject.value - 1].name);
+        
+        element.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+    };
 </script>
 
 <template>
-    <div class="projectsSection">
+    <div class="projectsSection" id="projects">
         <nav>
             <div class="left">
                 <h3>
@@ -151,8 +141,13 @@
                 bottom: 300px;
                 border: 1px solid white;
                 z-index: 1;
-                
+                // .page-link, .page-link:visited, .page-link:hover, .page-link:active, .page-link:focus {            
             }
+
+            button:focus, button:active, button:hover  {
+                border:none;
+                outline: 1px solid  v-bind('theme.first');;
+            }   
 
             .left {
                 left: 0px;

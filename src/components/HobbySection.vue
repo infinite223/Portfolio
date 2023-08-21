@@ -5,7 +5,7 @@
 </script>
 
 <template>
-    <div class="hobbySection">
+    <div class="hobbySection" id="hobby">
         <h3>
             My hobby
         </h3>

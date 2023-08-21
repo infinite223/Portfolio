@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div class="contactSection">
+    <div class="contactSection" id="contact">
         <h2>
             Contact
         </h2>

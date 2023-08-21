@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import type { PropType } from 'vue'
     import type { Project } from '../utils/projectsData'
-    import { useTheme } from '@/store';
+    import { useHoverTechProjects, useTheme } from '@/store';
     import { computed, ref, watchEffect } from 'vue';
     import { Icon } from '@iconify/vue'
     import carsdesignStart from '../assets/carsdesignStart.png';
@@ -13,9 +13,15 @@
 
     const { theme } = useTheme()
     const showOptions = ref(false)
-
+    const { hoverTechProjects }:any = useHoverTechProjects()
+    const findProject = ref()
+    
     watchEffect(() => {
         showOptions.value = false
+        if(hoverTechProjects.value){
+            findProject.value = hoverTechProjects.value.find((project:string) => project === projectData?.name)
+            console.log(hoverTechProjects.value)
+        }
     })
 
     const { projectData } = defineProps({
@@ -23,6 +29,8 @@
             type: Object as PropType<Project>
         }
     })
+
+
 
     const handleMouse = (type:boolean) => {
         showOptions.value = type
@@ -102,8 +110,7 @@
         position: relative;
         height: 600px;
         min-width: 450px;
-        // background-color: rgb(28, 28, 28);
-        background-color: rgb(18, 18, 18);
+        background-color: v-bind('findProject?"rgba(74, 211, 70, .2)":"rgb(18, 18, 18)"');
 
         background-image: var(--bgImage);
 

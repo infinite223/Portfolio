@@ -1,15 +1,20 @@
 <script lang="ts" setup>
     import { myTechnologies } from './../utils/projectsData'
+    import TechnologyItem from './TechnologyItem.vue';
 </script>
 
 <template>
-    <div class="technologiesBaner">
+    <div class="technologiesBaner" id="technologies">
         <h3>Technologies I use</h3>
         <p>Technologies that I use most often to create my projects</p>
         <div class="content">
-            <div class="item" v-for="technology in myTechnologies">
+            
+            <TechnologyItem 
+                :technology="technology"
+                v-for="technology in myTechnologies"
+            >
                 {{technology.name}}
-            </div>
+            </TechnologyItem>
         </div>
     </div>
 </template>
