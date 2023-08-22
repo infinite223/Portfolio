@@ -40,7 +40,7 @@
             }
 
             p {
-                color: rgb(132, 132, 132);
+                color: rgb(197, 197, 197);
                 max-width: 60vw;
                 font-size: 16px;
             }

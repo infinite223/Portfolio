@@ -6,7 +6,8 @@
 <template>
     <div class="technologiesBaner" id="technologies">
         <h3>Technologies I use</h3>
-        <p>Technologies that I use most often to create my projects</p>
+        <h4>See in which project I used a specific technology</h4>
+        <p>Technologies that I use most often to create my projects:</p>
         <div class="content">
             
             <TechnologyItem 
@@ -35,9 +36,16 @@
             margin-bottom: 5px;
         }
 
+        h4 {
+            color: rgb(184, 183, 183);
+            letter-spacing: 2px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin: 0px;
+        }
+
         p {
             font-size: 15px;
-            color: gray;
+            color: rgb(157, 157, 157);
             font-weight: 100;
         }
 

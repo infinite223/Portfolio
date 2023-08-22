@@ -14,9 +14,19 @@ import { myProjects } from '@/utils/projectsData';
         }
     })
 
-    const handleMouse = (type: boolean) => {
+    const handleMouse = (type: boolean, project:string | null) => {
         isHover.value = type
-        let _projectsList: string[] = [] 
+
+        if(project) {
+            if(type){
+                setHoverTechProjects([project])
+            }
+            else {
+                setHoverTechProjects([])
+            }
+        }
+        else {
+            let _projectsList: string[] = [] 
         myProjects.forEach((project) => {
             const findProjectInGlobalData = project.technologies.find((tech) => tech.id === props.technology.id)
             const findProjectInState = _projectsList.find((tech) => tech === props.technology.name)
@@ -34,6 +44,28 @@ import { myProjects } from '@/utils/projectsData';
         else {
             setHoverTechProjects([])
         }
+        }
+
+
+    }
+
+    const navigateTo = (project:string) => {
+        const element: any = document.getElementById(project);
+        
+        element.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
+        
+        setTimeout(() => {
+            setHoverTechProjects([project])
+        }, 500)
+        setTimeout(() => {
+            element.classList.add('pulse-animation');
+            element.addEventListener('animationend', () => {
+                element.classList.remove('pulse-animation');
+            });
+        }, 600)
+        setTimeout(() => {
+            setHoverTechProjects([])
+        }, 3000)
     }
 
 </script>
@@ -41,17 +73,26 @@ import { myProjects } from '@/utils/projectsData';
 <template>
     <div 
         class="technologyItem" 
-        :onmouseenter="() => handleMouse(true)"
-        :onmouseleave="() => handleMouse(false)"
+        :onmouseenter="() => handleMouse(true, null)"
+        :onmouseleave="() => handleMouse(false, null)"
     >
         {{props.technology?.name}}
 
         <transition>
-            <div v-if="isHover" class="projectsList">
+            <div 
+                v-if="isHover" class="projectsList"
+            >
                 <h3>Projects in which I used 
                     <span>{{props.technology?.name}}</span>
                 </h3>
-                <div v-for="project in projectsList" class="project">
+                <p>Click on the project name to see it</p>
+                <div 
+                    v-for="project in projectsList" 
+                    class="project"
+                    @click="() => navigateTo(project)"
+                    :onmouseenter="() => handleMouse(true, project)"
+                    :onmouseleave="() => handleMouse(true, project)"
+                >
                     {{project}}
                 </div>
             </div>
@@ -82,16 +123,38 @@ import { myProjects } from '@/utils/projectsData';
             right: -120px;
 
             h3 {
+                margin-bottom: 6px;
+
                 span {
                     color: v-bind('theme.first');
                 }
             }
 
+            p {
+                color: rgb(182, 182, 182);
+                margin: 3px 0;
+                margin-bottom: 10px;
+                font-size: 12px;
+            }
+
             .project {
-                color: white;
                 color: rgb(189, 189, 189);
+
+                &:hover {
+                    color: white; 
+                }
             }
         }
+    }
+
+    .v-enter-active,
+    .v-leave-active {
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .v-enter-from,
+    .v-leave-to {
+        opacity: 0;
     }
 
 </style>

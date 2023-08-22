@@ -29,15 +29,19 @@
         
         element.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
     };
+
+    const isInViewport = computed(() => {
+        return true
+    })
 </script>
 
 <template>
     <div class="projectsSection" id="projects">
         <nav>
             <div class="left">
-                <h3>
+                <div class="headerText">
                     My projects
-                </h3>
+                </div>
                 <h2>
                     Selected works <br/> 2021 - 2023
                 </h2>
@@ -61,6 +65,11 @@
         height: auto;
         width: 100%;
         position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
         nav {
             display: flex;
@@ -76,11 +85,7 @@
                     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                     line-height: 40px;
                     letter-spacing: 1px;
-                }
-                h3 {
-                    font-size:14px;
-                    color: v-bind('theme.first');
-                    font-weight: 300;
+                    text-align: left;
                 }
             }
 
@@ -113,8 +118,8 @@
         .projectsList {
             display: flex;
             gap: 10px;
-            margin: 20px -20px;
-            width: 100vw;
+            margin: 20px 0px;
+            width: calc(100vw - 40px);
             max-height: 640px;
 
             overflow-x: scroll;
@@ -132,6 +137,8 @@
             }
 
             .arrowIcon {
+                display: v-bind('isInViewport?"block":"none"');
+
                 position: absolute;
                 width: 50px;
                 height: 50px;
@@ -147,6 +154,8 @@
             button:focus, button:active, button:hover  {
                 border:none;
                 outline: 1px solid  v-bind('theme.first');;
+                transition: .3s all ease-in-out;
+                cursor: pointer;
             }   
 
             .left {

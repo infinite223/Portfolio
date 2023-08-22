@@ -55,6 +55,7 @@
                 break;
         }
     })
+
     
 </script>
 
@@ -110,7 +111,7 @@
         position: relative;
         height: 600px;
         min-width: 450px;
-        background-color: v-bind('findProject?"rgba(74, 211, 70, .2)":"rgb(18, 18, 18)"');
+        background-color: v-bind('findProject?"rgba(34, 33, 33, 1)":"rgb(18, 18, 18)"');
 
         background-image: var(--bgImage);
 
@@ -172,4 +173,22 @@
             margin-top: 0px;
         }
     }
+
+    @keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    background-color: v-bind('theme.secend');
+  }
+}
+
+/* Styl dla animacji "pulse" */
+.pulse-animation {
+  animation: pulse 0.5s;
+}
 </style>
