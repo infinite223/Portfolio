@@ -22,7 +22,7 @@ import { useTheme } from '@/store';
         </div>
       </div>
       <div class="links">
-        <div class="link" v-for="link in links">{{ link.name }}</div>
+        <!-- <div class="link" v-for="link in links">{{ link.name }}</div> -->
       </div>
     </div>
 </template>
@@ -33,14 +33,14 @@ import { useTheme } from '@/store';
         display: flex;
         // align-items: center;
         justify-content: space-between;
-        border-top: 1px solid rgb(67, 67, 67);
+        border-top: 1px solid rgb(47, 47, 47);
         padding: 20px 0;
 
         .left {
             display: flex;
             flex-direction: column;
             max-width: 30%;
-            gap: 20px;
+            gap: 10px;
 
             .left__mainText {
                 color: rgb(189, 189, 189);

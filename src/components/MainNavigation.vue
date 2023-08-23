@@ -2,6 +2,8 @@
 import { useTheme } from '@/store';
 import { computed } from 'vue';
 import { Icon } from '@iconify/vue'
+import { ref } from 'vue'
+import SelectRandomTheme  from './SelectRandomTheme.vue'
 
     const { theme } = useTheme()
     const links = [
@@ -16,6 +18,13 @@ import { Icon } from '@iconify/vue'
         return `&hover`
     })
 
+    const showSelectRandomTheme = ref(false)
+
+    const setShowSelectRandomTheme = (type: boolean) => {
+        showSelectRandomTheme.value = type
+        console.log(type)
+    }
+
     const scrollToSection = (sectionName: string)  => {
         const element: any = document.getElementById(sectionName);
         
@@ -25,7 +34,11 @@ import { Icon } from '@iconify/vue'
 
 <template>
     <nav>
-        <div class="themeSelect" :style="{backgroundColor:'lightgray'}">
+        <div 
+            @click="() => setShowSelectRandomTheme(true)"
+            class="themeSelect" 
+            :style="{backgroundColor:'lightgray'}"
+        >
             <Icon :color="theme.first" icon="mdi:palette" class="icon" width="28px"/>
 
         </div>
@@ -40,6 +53,8 @@ import { Icon } from '@iconify/vue'
         >
             Best project
         </div>
+        
+        <SelectRandomTheme v-if="showSelectRandomTheme" :setShowSelectRandomTheme="setShowSelectRandomTheme"/>
     </nav>
 </template>
 

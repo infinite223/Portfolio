@@ -16,8 +16,8 @@
         <HeaderSection/>
         <TechnologiesBaner/>
         <ProjectsSectionVue/>
-        <HobbySection/>
         <ContactSection/>
+        <HobbySection/>
         <FooterSection/>
     </div>
 </template>

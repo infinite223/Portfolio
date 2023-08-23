@@ -1,8 +1,14 @@
 <script setup lang="ts">
    import { useTheme } from '@/store';
    import { Icon } from '@iconify/vue'
+   import { ref } from 'vue'
 
     const { theme } = useTheme()
+    const hoverHobby = ref<number | null>(null)
+
+    const setHoverHobby = (hobby: number | null) => {
+        hoverHobby.value = hobby
+    }
 </script>
 
 <template>
@@ -14,13 +20,29 @@
             I try to combine my interests with programming.
         </h4>
         <h2>
-            Currently, programming is my biggest hobby, but besides it, I'm also very interested in car tuning, photography, and AI.
+            Currently, programming is my biggest hobby, but besides it, I'm also very interested in 
+            <span :class="{'baseColor': hoverHobby === 1}">car tuning</span>,
+            <span :class="{'baseColor': hoverHobby === 0}">photography</span>, 
+             and 
+             <span :class="{'baseColor': hoverHobby === 2}">AI</span>.
         </h2>
 
         <div class="iconsContainer">
-            <Icon icon="eos-icons:ai" class="icon" width="34px"/>
-            <Icon icon="mdi:car-outline" class="icon" width="34px"/>
-            <Icon icon="fa:photo" class="icon" width="34px"/>
+            <Icon 
+                icon="eos-icons:ai" :class="{'baseColor': hoverHobby === 2}" class="icon" width="34px"
+                :onmouseenter="() => setHoverHobby(2)"
+                :onmouseleave="() => setHoverHobby(null)"
+            />
+            <Icon 
+                icon="mdi:car-outline" :class="{'baseColor': hoverHobby === 1}" class="icon" width="34px"
+                :onmouseenter="() => setHoverHobby(1)"
+                :onmouseleave="() => setHoverHobby(null)"
+            />
+            <Icon 
+                icon="fa:photo" :class="{'baseColor': hoverHobby === 0}" class="icon" width="34px"
+                :onmouseenter="() => setHoverHobby(0)"
+                :onmouseleave="() => setHoverHobby(null)"
+            />
         </div>
     </div>
 </template>
@@ -33,6 +55,11 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+
+        .baseColor {
+            color: v-bind('theme.first');
+            cursor: pointer;
+        }
     }
     h2 {
         font-size: 40px;

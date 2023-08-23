@@ -43,12 +43,12 @@ import { Draggable } from 'gsap/all';
 
   const randomPosAndSize = computed(() => {
     const size = getRandomInt(80)+50
-    const posX = getRandomInt(innerWidth-200)+100
-    const posY = getRandomInt(innerHeight-200)+100
+    const posX = getRandomInt(innerWidth * .7) + (innerWidth * .3 )/2
+    const posY = getRandomInt(innerHeight * .7) + (innerHeight * .3 )/2
     
     return `
         width: ${size+'px'}; height: ${size+'px'}; left: ${posX+ 'px'}; top: ${posY+ 'px'};
-        background: radial-gradient(circle, ${color.first} 0%, ${color.secend} 1%, rgba(15, 15, 15, 1) 85%,  rgba(21, 21, 21, .1) 100%);
+        background: radial-gradient(circle, ${color.first} 0%, ${color.secend} 21%, rgba(15, 15, 15, 1) 85%,  rgba(21, 21, 21, .1) 100%);
         animation-delay:${getRandomInt(4)+'s'}:
         box-shadow: 0px 0px 68px 10px ${color.secend};
         -webkit-box-shadow: 0px 0px 68px 10px ${color.secend};
@@ -91,8 +91,9 @@ import { Draggable } from 'gsap/all';
 <style scoped lang="scss">
     .circleGradient {
         position: fixed;
-        
+        z-index: 7;
         border-radius: 50%;
+
         // animation: pulse 5s infinite;
         z-index: 1;
         &:hover {

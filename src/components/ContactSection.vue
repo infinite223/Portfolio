@@ -1,5 +1,6 @@
 <script setup lang="ts">
     import { useTheme } from '@/store'; 
+    import { Icon } from '@iconify/vue'
 
     const { theme } = useTheme()
 </script>
@@ -9,14 +10,59 @@
         <div class="headerText">
             Contact
         </div>
+
         <h2>
             If you are interested in working with me, write to me
         </h2>
 
+        <div class="containerIcons">
+            <a href="https://github.com/infinite223" target="_blank">
+                <div class="containerIcon">
+                    <Icon 
+                        icon="mdi:github" class="icon" width="34px"
+                    />
+                    <div class="iconName">
+                        Github
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://www.facebook.com/dawid.szmigiel.75" target="_blank">
+                <div class="containerIcon">
+                    <Icon 
+                        icon="mdi:facebook" class="icon" width="34px"
+                    />
+                    <div class="iconName">
+                            Facebook
+                    </div>
+                </div>
+            </a>
+            <a href="https://www.instagram.com/infinitetw3rk/" target="_blank">
+                <div class="containerIcon">
+                    <Icon 
+                        icon="mdi:instagram" class="icon" width="34px"
+                    />
+                    <div class="iconName">
+                            Instagram
+                    </div>
+                </div>
+            </a> 
+
+            <a href="https://www.linkedin.com/in/dawid-szmigiel-7a7609167/" target="_blank">
+                <div class="containerIcon">
+                    <Icon 
+                        icon="mdi:linkedin" class="icon" width="34px"
+                    />
+                    <div class="iconName">
+                        linkedin
+                    </div>
+                </div>
+            </a>
+        </div>
+
         <a class="contact" href="mailto:dawidszmigiel9@gmail.com">
             Send me an email
         </a>
-        <!-- <a href="mailto:dawidszmigiel9@gmail.com">DawidSzmigiel9@gmail.com</a> -->
     </div>
 </template>
 
@@ -39,6 +85,31 @@
             text-align: center;
             line-height: 47px;
             max-width: 70vw;
+        }
+
+        .containerIcons {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+
+            .containerIcon {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 10px 20px;
+                color: rgb(193, 193, 193);
+
+                .iconName {
+                }
+
+                                    
+                &:hover {
+                    color: v-bind('theme.first');
+                    color: white;
+                    transition: .3s all ease-in-out;
+                    cursor: pointer;
+                }
+            }
         }
 
         .contact {
