@@ -85,12 +85,28 @@
             text-align: center;
             line-height: 47px;
             max-width: 70vw;
+
+            @media (max-width: 480px) {
+                max-width: 90vw;
+                line-height: 40px;
+                font-size: 30px;
+            }
+            @media (max-width: 350px) {
+                line-height: 30px;
+                font-size: 25px;
+            }
         }
 
         .containerIcons {
             display: flex;
             align-items: center;
             margin-top: 10px;
+
+            @media (max-width: 480px) {
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+            }
 
             .containerIcon {
                 display: flex;

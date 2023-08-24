@@ -86,6 +86,16 @@
                     line-height: 40px;
                     letter-spacing: 1px;
                     text-align: left;
+
+                    @media (max-width: 480px) {
+                        max-width: 90vw;
+                        line-height: 35px;
+                        font-size: 30px;
+                    }
+                    @media (max-width: 350px) {
+                        line-height: 30px;
+                        font-size: 25px;
+                    }
                 }
             }
 
@@ -148,6 +158,11 @@
                 bottom: 300px;
                 border: 1px solid white;
                 z-index: 1;
+                
+                @media (max-width: 480px) {
+                    width: 30px;
+                    height: 30px;
+                }
                 // .page-link, .page-link:visited, .page-link:hover, .page-link:active, .page-link:focus {            
             }
 

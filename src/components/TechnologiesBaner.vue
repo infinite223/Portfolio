@@ -29,6 +29,10 @@
 
         padding: 100px 0;
 
+        @media (max-width: 480px) {
+            text-align: center;
+        }
+
         h3 {
             color: white;
             font-size: 22px;

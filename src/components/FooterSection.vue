@@ -15,10 +15,10 @@ import { useTheme } from '@/store';
     <div class="footerSection">
       <div class="left">
         <div class="left__mainText">
-            Sapiente autem provident minus ad inventore rem consectetur deserunt illum? Ex.
+            
         </div>
         <div class="grayText">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+            Copyright © dawidszmigiel-portfolio.netlify.app
         </div>
       </div>
       <div class="links">
@@ -41,6 +41,11 @@ import { useTheme } from '@/store';
             flex-direction: column;
             max-width: 30%;
             gap: 10px;
+
+            @media (max-width: 480px) {
+                max-width: 70%;
+            }
+
 
             .left__mainText {
                 color: rgb(189, 189, 189);

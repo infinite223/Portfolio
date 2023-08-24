@@ -49,12 +49,13 @@ import SelectRandomTheme  from './SelectRandomTheme.vue'
             </div>
         </div>
 
-        <div class="button" 
-        >
-            Best project
-        </div>
+        <a href="https://github.com/infinite223/Cars-design" target="_blank">
+            <div class="button">
+                My favorite project
+            </div>
+        </a>
         
-        <SelectRandomTheme v-if="showSelectRandomTheme" :setShowSelectRandomTheme="setShowSelectRandomTheme"/>
+        <SelectRandomTheme :showSelectRandomThem="showSelectRandomTheme" :setShowSelectRandomTheme="setShowSelectRandomTheme"/>
     </nav>
 </template>
 
@@ -94,8 +95,13 @@ import SelectRandomTheme  from './SelectRandomTheme.vue'
             align-items: center;
             width: 800px;
 
+            @media (max-width: 480px) {
+                display: none;
+            }
+
+
             .link {
-                color: rgb(161, 161, 161);
+                color: rgb(193, 193, 193);
                 padding: 10px;
                 font-size: 15px;
 

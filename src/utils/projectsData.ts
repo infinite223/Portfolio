@@ -3,7 +3,7 @@ export type Project = {
     description: string,
     technologies: {id: number, name: string, icon:string}[],
     createdAt: Date,
-    image: 'carsdesignStart' | 'kaban' | 'monkey' | 'workSchedule' | 'downloadSongs' | 'shoppingNotes',
+    image: 'carsdesignStart' | 'portfolio' | 'kaban' | 'monkey' | 'workSchedule' | 'downloadSongs' | 'shoppingNotes',
     type: 'Mobile app' | 'Web app',
     links: {
         linkToGithub: string,
@@ -140,6 +140,22 @@ export const myProjects:Project[] = [
         links: {
             linkToGithub: 'https://github.com/infinite223/Shopping-notes',
             linkToLiveapp: 'https://play.google.com/store/apps/details?id=com.shopping.notes'
+        }
+    },
+    {
+        name: 'Portfolio',
+        description: "Page about me, containing all my projects, my interests and contacts.",
+        createdAt: new Date(),
+        type: 'Mobile app',
+        technologies: [
+            myTechnologies[11],
+            myTechnologies[12],  
+            myTechnologies[6],  
+        ],
+        image:'portfolio',
+        links: {
+            linkToGithub: 'https://github.com/infinite223/Portfolio',
+            linkToLiveapp: ''
         }
     }
 ]

@@ -10,6 +10,7 @@
     import workSchedule from '../assets/workSchedule.png';
     import downloadSongs from '../assets/downloadSongs.png';
     import shoppingNotes from '../assets/shoppingNotes.png';
+    import portfolio from '../assets/portfolio.png';
 
     const { theme } = useTheme()
     const showOptions = ref(false)
@@ -40,17 +41,19 @@
     const backgroundProjectImage = computed(() => {
         switch (projectData?.image) {
             case 'carsdesignStart':
-                return `background-image: url( ${carsdesignStart})`;
+                return  carsdesignStart
             case 'kaban': 
-                return `background-image: url( ${kaban})`;
+                return kaban
             case 'monkey': 
-                return `background-image: url( ${monkey})`;
+                return monkey
             case 'workSchedule': 
-                return `background-image: url( ${workSchedule})`;
+                return workSchedule
             case 'downloadSongs': 
-                return `background-image: url( ${downloadSongs})`;
+                return downloadSongs
             case 'shoppingNotes': 
-                return `background-image: url( ${shoppingNotes})`;
+                return shoppingNotes
+            case 'portfolio': 
+                return portfolio
             default:
                 break;
         }
@@ -63,7 +66,6 @@
     <div 
         class="projectItem" 
         :id="projectData?.name"
-        :style="backgroundProjectImage"
         :onmouseenter="() => handleMouse(true)"
         :onmouseleave="() => handleMouse(false)"
     >
@@ -78,6 +80,8 @@
         <p>
             {{projectData?.description}}
         </p>
+
+        <img class="image" :src="backgroundProjectImage"/>
 
         <transition 
             name="slide-right" mode="out-in"
@@ -109,7 +113,7 @@
         display: flex;
         flex-direction: column;
         position: relative;
-        height: 600px;
+        height: auto;
         min-width: 450px;
         background-color: v-bind('findProject?"rgba(34, 33, 33, 1)":"rgb(18, 18, 18)"');
 
@@ -119,10 +123,15 @@
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: 0px 200px;
+        overflow: hidden;
+
+        @media (max-width: 480px) {
+            min-width: 90vw;
+        }
 
         .projectItem__options {
             background-color: rgba(16, 16, 16, .8);
-            height: 600px;
+            height: 100%;
             width: 450px;
             position: absolute;
             left: 0px;
@@ -133,6 +142,10 @@
             justify-content: center;
             flex-direction: column;
             gap: 10px;
+
+            @media (max-width: 480px) {
+                width: 100%;
+            }
 
             .option {
                 display: flex;
@@ -171,6 +184,10 @@
             font-size: 15px;
             color: rgb(188, 188, 188);
             margin-top: 0px;
+        }
+
+        .image {
+            width: 100%;
         }
     }
 

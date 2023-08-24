@@ -13,7 +13,10 @@
 
         <div class="headerSection__main">
             <h1>Dawid Szmigiel</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, perferendis praesentium consequuntur quibusdam ipsa ipsam reprehenderit dolor eius suscipit! Porro, sapiente doloribus?</p>
+            <p>
+                Currently, I'm in my final year of computer science studies and I'm looking for additional work. Take a look at my portfolio, 
+                and if you're interested in collaboration, feel free to get in touch.
+            </p>
         </div>
         
         <div class="icon__container">
@@ -37,12 +40,20 @@
                 font-size: 80px;
                 max-width: 60vw;
                 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                
+                @media (max-width: 380px) {
+                    font-size: 60px;
+                }
             }
 
             p {
                 color: rgb(197, 197, 197);
                 max-width: 60vw;
-                font-size: 16px;
+                font-size: 18px;
+
+                @media (max-width: 480px) {
+                    max-width: 90%;
+                }
             }
         }
 

@@ -38,6 +38,13 @@ const { theme } = useTheme()
   overflow-y: auto;
 }
 
+a, button {
+  &:focus, :active, ::after {
+    text-decoration: none;
+    outline: none;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 

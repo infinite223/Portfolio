@@ -56,6 +56,10 @@
         align-items: center;
         justify-content: center;
 
+        @media (max-width: 480px) {
+            text-align: center;
+        }
+
         .baseColor {
             color: v-bind('theme.first');
             cursor: pointer;
@@ -67,11 +71,20 @@
         margin: 10px;
         margin-bottom: 30px;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        line-height: 40px;
         letter-spacing: 1px;
         max-width: 70vw;
         text-align: center;
         line-height: 47px;
+
+        @media (max-width: 480px) {
+            max-width: 90vw;
+            line-height: 40px;
+            font-size: 30px;
+        }
+        @media (max-width: 350px) {
+            line-height: 30px;
+            font-size: 25px;
+        }
     }
     
     h4 {
