@@ -2,7 +2,7 @@
     import { useTheme } from '@/store';
     import MainNavigation from './MainNavigation.vue';
     import { Icon } from '@iconify/vue'
-
+    import me from './../assets/me.png'
     const { theme } = useTheme()
 
 </script>
@@ -10,6 +10,7 @@
 <template>
     <div class="headerSection">
         <MainNavigation/>
+        <img :src="me"/>
 
         <div class="headerSection__main">
             <h1>Dawid Szmigiel</h1>
@@ -30,11 +31,38 @@
         width: 100%;
         height: 100vh;
 
+        @media (max-width: 480px) {
+            height: auto;
+        }
+
         display: flex;
         justify-content: space-between;
         flex-direction: column;
 
+        img {
+            position: absolute;
+            width: 40vw;
+            z-index: 1;
+            right: 0;
+            opacity: .5;
+
+            @media (max-width: 480px) {
+                // height: 80vh;
+                // width: auto;;
+                // bottom: 0px;
+                position: relative;
+                height: 230px;
+                border: 1px solid gray;
+                width: 200px;
+                border-radius: 50%;
+                top: 70px;
+                left: 0px;
+                margin-bottom: 50px;
+            }
+        }
+
         .headerSection__main {
+            z-index: 2;
             h1 {
                 color: white;
                 font-size: 80px;

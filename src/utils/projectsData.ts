@@ -151,6 +151,7 @@ export const myProjects:Project[] = [
             myTechnologies[11],
             myTechnologies[12],  
             myTechnologies[6],  
+            myTechnologies[10]
         ],
         image:'portfolio',
         links: {

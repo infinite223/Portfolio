@@ -188,10 +188,18 @@
 
         .image {
             width: 100%;
+
+            
+            @media (max-width: 480px) {
+                width: 120%;
+                position: relative;
+                left: -30px;
+                bottom: -30px;
+            }
         }
     }
 
-    @keyframes pulse {
+@keyframes pulse {
   0% {
     transform: scale(1);
   }

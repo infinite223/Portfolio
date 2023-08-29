@@ -67,8 +67,9 @@ import SelectRandomTheme  from './SelectRandomTheme.vue'
         align-items: center;
         justify-content: space-between;
 
-        background-color: black;
         padding: 20px 0;
+        z-index: 3 !important;
+
 
         .themeSelect {
             position: relative;
