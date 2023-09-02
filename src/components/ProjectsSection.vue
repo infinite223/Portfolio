@@ -3,7 +3,7 @@
     import ProjectItem from './ProjectItem.vue'
     import { useTheme } from '@/store';
     import { computed, ref } from 'vue';
-    import { Icon } from '@iconify/vue'
+    
     const selectedProject = ref(3)
     const lastUsed = ref(true)
     const { theme } = useTheme()
@@ -129,7 +129,7 @@
             display: flex;
             gap: 10px;
             margin: 20px 0px;
-            width: calc(100vw - 40px);
+            width: calc(100vw - 0px);
             max-height: 640px;
 
             overflow-x: scroll;

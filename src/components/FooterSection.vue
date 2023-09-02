@@ -31,7 +31,6 @@ import { useTheme } from '@/store';
     .footerSection {
         width: 100%;
         display: flex;
-        // align-items: center;
         justify-content: space-between;
         border-top: 1px solid rgb(47, 47, 47);
         padding: 20px 0;
@@ -45,7 +44,6 @@ import { useTheme } from '@/store';
             @media (max-width: 480px) {
                 max-width: 70%;
             }
-
 
             .left__mainText {
                 color: rgb(189, 189, 189);

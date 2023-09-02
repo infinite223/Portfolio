@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import TopNavigation from './components/TopNavigation.vue'
+import { RouterView } from 'vue-router'
 import { useTheme } from './store/index'
 const { theme } = useTheme()
 
@@ -8,8 +7,6 @@ const { theme } = useTheme()
 
 <template>
   <div class="app">
-    <!-- <TopNavigation/> -->
-
     <RouterView/>
   </div>
 
@@ -36,6 +33,7 @@ const { theme } = useTheme()
   align-items: center;
 
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 a, button {
@@ -50,29 +48,22 @@ html {
 
 }
 
-
 ::-webkit-scrollbar {
   width: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: #000000;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #575757;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #000000;
 }
 
-
-/*reset.css*/
-/* RESETS */
 *,
 *::before,
 *::after {

@@ -20,12 +20,15 @@
             I try to combine my interests with programming.
         </h4>
         <h2>
-            Currently, programming is my biggest hobby, but besides it, I'm also very interested in 
+            Currently, programming is my biggest hobby, but besides it 
+        </h2>
+        <h3>    
+        I'm also very interested in 
             <span :class="{'baseColor': hoverHobby === 1}">car tuning</span>,
             <span :class="{'baseColor': hoverHobby === 0}">photography</span>, 
              and 
              <span :class="{'baseColor': hoverHobby === 2}">AI</span>.
-        </h2>
+        </h3>
 
         <div class="iconsContainer">
             <Icon 
@@ -92,6 +95,19 @@
         color: rgb(162, 162, 162);
         letter-spacing: 2px;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    h3 {
+        color: rgb(223, 223, 223);
+        font-size: 25px;
+        margin: 0px;
+        margin-bottom: 10px;
+
+        @media (max-width: 480px) {
+            max-width: 90vw;
+            line-height: 25px;
+            font-size: 20px;
+        }
     }
 
     .iconsContainer {

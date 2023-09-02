@@ -47,9 +47,6 @@
             opacity: .5;
 
             @media (max-width: 480px) {
-                // height: 80vh;
-                // width: auto;;
-                // bottom: 0px;
                 position: relative;
                 height: 230px;
                 border: 1px solid gray;
@@ -98,7 +95,6 @@
         @keyframes pulse {
         100% {  height: 50px; opacity: 1;}
         0%{   height: 0px; opacity: 1;}
-        // 0% {   height: 50px; opacity: 1;}
     }
     }
 </style>

@@ -1,21 +1,13 @@
 <script setup lang="ts">
-    import { ref, watchEffect } from 'vue'
-    import { Icon } from '@iconify/vue'
     import { RouterView } from 'vue-router'
     import {useRoute} from 'vue-router'
 
     const route = useRoute()
-
-    // watchEffect(() => {
-    //     console.log(route.path)
-    // })
-    
 </script>
 
 <template>
   <div class="mainSection">
     <nav>
-        <!-- <router-link to="/" :class="(route.path==='/')?'class_if_is_true':'else_class'">Skills</router-link> -->
         <router-link class="link" to="/" :class="{'active':route.path==='/'}">Skills</router-link>
         <router-link class="link" to="/projects" :class="{'active':route.path==='/projects'}">Projects</router-link>
     </nav>

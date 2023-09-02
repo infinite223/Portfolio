@@ -1,9 +1,7 @@
 <script setup lang="ts">
   import { computed, ref, type PropType, watch, reactive } from 'vue'
-  import { Icon } from '@iconify/vue'
   import { useTheme } from '../store/index';
   import gsap from 'gsap'
-import { Draggable } from 'gsap/all';
 
   function getRandomInt(max:number) {
     return Math.floor(Math.random() * max);

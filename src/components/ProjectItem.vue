@@ -120,9 +120,7 @@
         background-image: var(--bgImage);
 
         padding: 0 20px;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: 0px 200px;
+        padding-top: 20px;
         overflow: hidden;
 
         @media (max-width: 480px) {
@@ -130,7 +128,7 @@
         }
 
         .projectItem__options {
-            background-color: rgba(16, 16, 16, .8);
+            background-color: rgba(1, 1, 1, .8);
             height: 100%;
             width: 450px;
             position: absolute;
