@@ -41,9 +41,10 @@
 
         img {
             position: absolute;
-            width: 40vw;
+            width: 37vw;
             z-index: 1;
             right: 0;
+            bottom: 0px;
             opacity: .5;
 
             @media (max-width: 480px) {

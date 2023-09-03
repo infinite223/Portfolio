@@ -76,7 +76,7 @@
         justify-content: center;
 
         h2 {
-            font-size: 40px;
+            font-size: 38px;
             color: white;
             margin: 0px;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
