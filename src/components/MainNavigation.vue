@@ -113,6 +113,9 @@ import SelectRandomTheme  from './SelectRandomTheme.vue'
                 }
             }
         }
+        a {
+            text-decoration: none;
+        }
         .button {
             padding: 10px 20px;
             border: 1px solid white;

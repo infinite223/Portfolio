@@ -124,6 +124,7 @@ import { myProjects } from '@/utils/projectsData';
 
             h3 {
                 margin-bottom: 6px;
+                
 
                 span {
                     color: v-bind('theme.first');
@@ -131,7 +132,7 @@ import { myProjects } from '@/utils/projectsData';
             }
 
             p {
-                color: rgb(182, 182, 182);
+                color: rgb(206, 206, 206);
                 margin: 3px 0;
                 margin-bottom: 10px;
                 font-size: 12px;
@@ -139,6 +140,7 @@ import { myProjects } from '@/utils/projectsData';
 
             .project {
                 color: rgb(189, 189, 189);
+                font-size: 15px;
 
                 &:hover {
                     color: white; 

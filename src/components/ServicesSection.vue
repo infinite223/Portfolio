@@ -93,17 +93,19 @@
                 // height: 400px;
                 width: 340px;
                 background-color:rgb(23, 23, 23);
+                color: white;
 
                 h3 {
                     text-transform: uppercase;
                     font-size: 17px;
                     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-                    font-weight: 400;
+                    font-weight: 700;
                 }
 
                 p {
-                    color: rgb(127, 127, 127);
+                    // color: rgb(127, 127, 127);
                     font-size: 15px;
+                    font-weight: 100;
                 }
 
                 .footer {

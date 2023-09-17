@@ -61,8 +61,9 @@
 
         .headerSection__main {
             z-index: 2;
+            color: white;
+
             h1 {
-                color: white;
                 font-size: 80px;
                 max-width: 60vw;
                 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -73,9 +74,9 @@
             }
 
             p {
-                color: rgb(197, 197, 197);
                 max-width: 60vw;
                 font-size: 18px;
+                font-weight: 100;
 
                 @media (max-width: 480px) {
                     max-width: 90%;
