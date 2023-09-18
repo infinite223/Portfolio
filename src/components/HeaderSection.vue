@@ -41,17 +41,27 @@
 
         img {
             position: absolute;
-            width: 37vw;
+
             z-index: 1;
-            right: 0;
-            bottom: 0px;
-            opacity: .5;
+            right: 10px;
+            bottom: calc((100vh / 2) - 230px);
+            opacity: .6;
+            border: 1px solid v-bind('theme.first');
+            height: 450px;
+            // filter: hue-rotate(102deg);
+            filter: grayscale(1);
+
+            width:330px;
+
+            border-radius: 50%;
+            padding: 20px;
+            // background-color: rgb(59, 59, 59);
 
             @media (max-width: 480px) {
                 position: relative;
-                height: 230px;
+                height: 240px;
                 border: 1px solid gray;
-                width: 200px;
+                width: 180px;
                 border-radius: 50%;
                 top: 70px;
                 left: 0px;
