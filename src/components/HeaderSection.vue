@@ -10,8 +10,6 @@
 <template>
     <div class="headerSection">
         <MainNavigation/>
-        <img :src="me"/>
-
         <div class="headerSection__main">
             <h1>Dawid Szmigiel</h1>
             <p>
@@ -72,6 +70,12 @@
         .headerSection__main {
             z-index: 2;
             color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
 
             h1 {
                 font-size: 80px;
@@ -80,6 +84,9 @@
                 
                 @media (max-width: 380px) {
                     font-size: 60px;
+                }
+                @media (max-width: 580px) {
+                    font-size: 50px;
                 }
             }
 

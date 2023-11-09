@@ -5,7 +5,9 @@
     import TechnologiesBaner from '@/components/TechnologiesBaner.vue';
     import ContactSection from '@/components/ContactSection.vue';
     import HobbySection from '@/components/HobbySection.vue';
+    import LatestProjectSection from '@/components/LatestProjectSection.vue';
     import ServicesSection from '@/components/ServicesSection.vue';
+
     import { useTheme } from '@/store';
 
     const { theme } = useTheme()
@@ -15,6 +17,7 @@
 <template>
     <div class="mainContainer">
         <HeaderSection/>
+        <LatestProjectSection/>
         <ServicesSection/>
         <ContactSection/>
         <TechnologiesBaner/>

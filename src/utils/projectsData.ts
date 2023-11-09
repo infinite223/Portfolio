@@ -28,6 +28,27 @@ export const myTechnologies = [
     {id:13, name:'Tailwind', icon: ""},
 ]
 
+export const latestProject = {
+    name: 'ScheduleWork',
+        description: "A mobile application for managing the work schedule of employees. It makes it easier to record employees in the work schedule. The application allows you to divide into groups, quickly view the next working days and other co-workers.",
+        createdAt: new Date(),
+        type: 'Mobile app',
+        technologies: [
+            myTechnologies[0], 
+            myTechnologies[3], 
+            myTechnologies[4], 
+            myTechnologies[5], 
+            myTechnologies[7],
+            myTechnologies[10],
+            myTechnologies[12]
+        ],
+        image:'carsdesignStart',
+        links: {
+            linkToGithub: 'https://github.com/infinite223/Schedule-work-app',
+            linkToLiveapp: 'https://schedulework-preview.netlify.app/'
+        }
+}
+
 export const myProjects:Project[] = [
     {
         name: 'Cars design',
