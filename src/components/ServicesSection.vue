@@ -105,7 +105,7 @@
                 p {
                     // color: rgb(127, 127, 127);
                     font-size: 15px;
-                    font-weight: 100;
+                    font-weight: 300;
                 }
 
                 .footer {

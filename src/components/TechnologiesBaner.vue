@@ -50,7 +50,7 @@
         p {
             font-size: 15px;
             color: rgb(157, 157, 157);
-            font-weight: 100;
+            font-weight: 300;
         }
 
         .content{

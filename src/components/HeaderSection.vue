@@ -30,7 +30,7 @@
         height: 100vh;
 
         @media (max-width: 480px) {
-            height: auto;
+            // height: auto;
         }
 
         display: flex;
@@ -76,11 +76,11 @@
             justify-content: center;
 
             text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
             h1 {
                 font-size: 80px;
                 max-width: 60vw;
-                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                 
                 @media (max-width: 380px) {
                     font-size: 60px;
@@ -93,7 +93,7 @@
             p {
                 max-width: 60vw;
                 font-size: 18px;
-                font-weight: 100;
+                font-weight: 300;
 
                 @media (max-width: 480px) {
                     max-width: 90%;

@@ -8,7 +8,7 @@
 
 <template>
     <div class="latestProjectSection">
-        <div style="color: gray;" class="headerText">Latest project</div>
+        <div style="color: rgb(202, 202, 202);" class="headerText">Latest project</div>
         <div class="latestProjectSection__content">
             <img :src="scheduleApp" class="scheduleApp"/>
             <div class="latestProjectSection__content-description">
@@ -77,12 +77,17 @@
         flex-direction: column;
         background-color:rgb(23, 23, 23);
         
-        min-height: 100vh;
-        width: 95%;
+        // min-height: 100vh;
+        width: min-content;
         margin: auto;
         border-radius: 5px;
-        padding: 20px;
+        padding: 30px 30px;
         align-self: center;
+
+        @media (max-width: 480px) {
+            width: 100%;
+            margin-bottom: 40px;
+        }
 
         .page-link, .page-link:visited, .page-link:hover, .page-link:active, .page-link:focus {
             outline: 0 none !important;
@@ -100,6 +105,8 @@
             @media (max-width: 480px) {
                 width: 100%;
                 flex-direction: column;
+                align-items: center;
+                justify-content: center;
             }
             .scheduleApp {
                 width: 700px;
@@ -121,10 +128,19 @@
                 // background-color:rgb(23, 23, 23);
                 color: white;
 
+                @media (max-width: 480px) {
+                    align-items: center;
+                    justify-content: center;
+                }
+
                 p {
                     font-size: 17px;
-                    font-weight: 100;
+                    font-weight: 300;
                     color: rgb(187, 186, 186);
+
+                    @media (max-width: 480px) {
+                        text-align: center;
+                    }
                 }
 
                 .latestProjectSection__content-nav {
@@ -162,7 +178,6 @@
                 align-items: center;
                 justify-content: center;
                 gap: 20px;
-                // background-color: rgba(144, 144, 144, 0.2);
                 border: 1px solid rgb(184, 184, 184);
                 padding: 10px 25px;
                 color: rgb(214, 214, 214);
